@@ -1,6 +1,7 @@
 package com.example.demo.learningJPA;
 
 
+import com.example.demo.learningJPA.category.Category;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import org.springframework.validation.annotation.Validated;
@@ -14,14 +15,17 @@ public class Item {
     private Long id;
 
     private String name;
-    private String type;
     private int price;
     private int quantity;
     private boolean available;
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     public Item(String name, String type, int price, int quantity){
         this.name = name;
-        this.type = type;
+
         this.price = price;
         this.quantity = quantity;
         available = quantity > 0;
@@ -43,8 +47,8 @@ public class Item {
         return name;
     }
 
-    public String getType() {
-        return type;
+    public Category getCategory() {
+        return category;
     }
 
     public int getPrice() {
@@ -57,5 +61,10 @@ public class Item {
 
     public boolean isAvailable() {
         return available;
+    }
+
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
