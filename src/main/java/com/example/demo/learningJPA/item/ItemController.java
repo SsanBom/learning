@@ -1,8 +1,8 @@
-package com.example.demo.learningJPA;
+package com.example.demo.learningJPA.item;
 
-import com.example.demo.learningJPA.requests.ItemBuyRequest;
-import com.example.demo.learningJPA.requests.ItemRequest;
-import com.example.demo.learningJPA.responses.ItemResponse;
+import com.example.demo.learningJPA.item.requests.ItemBuyRequest;
+import com.example.demo.learningJPA.item.requests.ItemRequest;
+import com.example.demo.learningJPA.item.responses.ItemResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,11 +20,6 @@ public class ItemController {
     @GetMapping("/all")
     public List<ItemResponse> getAll(){
         return service.getAllItems();
-    }
-
-    @GetMapping("/by_type")
-    public List<ItemResponse> getByType(@RequestParam String type){
-        return service.getItemsByType(type);
     }
 
     @GetMapping("/low_stock")

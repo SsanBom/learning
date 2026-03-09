@@ -1,8 +1,8 @@
-package com.example.demo.learningJPA.mapping;
+package com.example.demo.learningJPA.item.mapping;
 
-import com.example.demo.learningJPA.Item;
-import com.example.demo.learningJPA.requests.ItemRequest;
-import com.example.demo.learningJPA.responses.ItemResponse;
+import com.example.demo.learningJPA.item.Item;
+import com.example.demo.learningJPA.item.requests.ItemRequest;
+import com.example.demo.learningJPA.item.responses.ItemResponse;
 import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 

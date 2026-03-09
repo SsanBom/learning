@@ -16,7 +16,7 @@ public class CategoryService {
         this.mapper = mapper;
     }
 
-    public CategoryResponse createCategory (CategoryRequest request){
-        repository.save(mapper.categoryRequestToCategory(request));
-    }
+//    public CategoryResponse createCategory (CategoryRequest request){
+//        repository.save(mapper.categoryRequestToCategory(request));
+//    }
 }

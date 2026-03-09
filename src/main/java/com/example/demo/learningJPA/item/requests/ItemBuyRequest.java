@@ -1,4 +1,4 @@
-package com.example.demo.learningJPA.requests;
+package com.example.demo.learningJPA.item.requests;
 
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Min;

@@ -1,4 +1,4 @@
-package com.example.demo.learningJPA.exceptions;
+package com.example.demo.learningJPA.item.exceptions;
 
 public class NotEnoughMoneyException extends RuntimeException {
     public NotEnoughMoneyException(int purchasePrice, int balance, int requestedQuantity, String itemName) {

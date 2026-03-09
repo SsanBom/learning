@@ -1,12 +1,12 @@
-package com.example.demo.learningJPA;
+package com.example.demo.learningJPA.item;
 
-import com.example.demo.learningJPA.exceptions.NotEnoughMoneyException;
-import com.example.demo.learningJPA.exceptions.NotSufficientSupplyException;
-import com.example.demo.learningJPA.mapping.ItemMapper;
-import com.example.demo.learningJPA.requests.ItemBuyRequest;
-import com.example.demo.learningJPA.requests.ItemRequest;
-import com.example.demo.learningJPA.responses.ItemBuyResponse;
-import com.example.demo.learningJPA.responses.ItemResponse;
+import com.example.demo.learningJPA.item.exceptions.NotEnoughMoneyException;
+import com.example.demo.learningJPA.item.exceptions.NotSufficientSupplyException;
+import com.example.demo.learningJPA.item.mapping.ItemMapper;
+import com.example.demo.learningJPA.item.requests.ItemBuyRequest;
+import com.example.demo.learningJPA.item.requests.ItemRequest;
+import com.example.demo.learningJPA.item.responses.ItemBuyResponse;
+import com.example.demo.learningJPA.item.responses.ItemResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,13 +27,6 @@ public class ItemService {
 
     public List<ItemResponse> getAllItems(){
         return repository.findAll()
-                .stream()
-                .map(item -> mapper.itemToItemResponse(item))
-                .toList();
-    }
-
-    public List<ItemResponse> getItemsByType(String type){
-        return repository.findByType(type)
                 .stream()
                 .map(item -> mapper.itemToItemResponse(item))
                 .toList();

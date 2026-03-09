@@ -1,4 +1,4 @@
-package com.example.demo.learningJPA.exceptions;
+package com.example.demo.learningJPA.item.exceptions;
 
 public class NotSufficientSupplyException extends RuntimeException {
     public NotSufficientSupplyException(int requestedQuantity, int realQuantity, String itemName) {

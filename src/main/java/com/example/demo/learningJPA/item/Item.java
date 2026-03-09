@@ -1,4 +1,4 @@
-package com.example.demo.learningJPA;
+package com.example.demo.learningJPA.item;
 
 
 import com.example.demo.learningJPA.category.Category;

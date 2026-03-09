@@ -1,7 +1,7 @@
 package com.example.demo.learningJPA.category;
 
 
-import com.example.demo.learningJPA.Item;
+import com.example.demo.learningJPA.item.Item;
 import jakarta.persistence.*;
 import org.springframework.validation.annotation.Validated;
 

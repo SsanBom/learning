@@ -1,0 +1,3 @@
+app:
+  validation:
+    valid_book_genres: FANTASY,SCI_FI,DETECTIVE,CLASSIC

@@ -4,14 +4,14 @@ import com.example.demo.learningGlobalExceptions.customException.ErrorResponse;
 import com.example.demo.learningGlobalExceptions.customException.InsufficientStockException;
 import com.example.demo.learningGlobalExceptions.customException.InvalidProductDataException;
 import com.example.demo.learningGlobalExceptions.customException.ProductNotFoundException;
-import com.example.demo.learningJPA.exceptions.NotEnoughMoneyException;
-import com.example.demo.learningJPA.exceptions.NotSufficientSupplyException;
+import com.example.demo.learningJPA.item.exceptions.NotEnoughMoneyException;
+import com.example.demo.learningJPA.item.exceptions.NotSufficientSupplyException;
+import com.example.demo.learningMigration.exceptions.InvalidBookGenreException;
+import com.example.demo.learningMigration.exceptions.InvalidYearException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
-import java.time.LocalDateTime;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -83,4 +83,25 @@ public class GlobalExceptionHandler {
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
+
+    @ExceptionHandler
+    public ResponseEntity<?> handleInvalidBookGenreException(InvalidBookGenreException e){
+        var errorResponse = new ErrorResponse(
+                "Bad request",
+                e.getMessage(),
+                400
+        );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<?> handleInvalidYearException(InvalidYearException e){
+        var errorResponse = new ErrorResponse(
+                "Bad request",
+                e.getMessage(),
+                400
+        );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.demo.learningJPA.responses;
+package com.example.demo.learningJPA.item.responses;
 
 public record ItemResponse(Long id, String name, String type, int price, int quantity, boolean available) {
 }
