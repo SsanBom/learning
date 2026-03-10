@@ -1,5 +1,6 @@
 package com.example.demo.learningMigration;
 
+import com.example.demo.learningMigration.author.Author;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,7 +12,9 @@ public class Book {
 
     private String title;
 
-    private String author;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
 
     private String genre;
 
@@ -21,9 +24,9 @@ public class Book {
 
     public Book(){}
 
-    public Book(String title, String author, String genre, int year, int pages) {
+    public Book(String title, Author author, String genre, int year, int pages) {
         this.title = title;
-        this.author = "тест";
+        this.author = author;
         this.genre = genre;
         this.year = year;
         this.pages = pages;
@@ -37,7 +40,7 @@ public class Book {
         return title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
