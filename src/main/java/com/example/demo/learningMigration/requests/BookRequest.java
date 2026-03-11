@@ -13,7 +13,7 @@ public class BookRequest {
 
     @NotNull
     @NotBlank
-    private String author;
+    private String authorName;
 
     @NotNull
     @NotBlank
@@ -28,10 +28,10 @@ public class BookRequest {
     public BookRequest() {}
 
 
-    public BookRequest(Long id, String title, String author, String genre, int year, int pages) {
+    public BookRequest(Long id, String title, String authorName, String genre, int year, int pages) {
         this.id = id;
         this.title = title;
-        this.author = author;
+        this.authorName = authorName;
         this.genre = genre;
         this.year = year;
         this.pages = pages;
@@ -45,8 +45,8 @@ public class BookRequest {
         return title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthorName() {
+        return authorName;
     }
 
     public String getGenre() {
